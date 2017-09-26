@@ -1,0 +1,33 @@
+
+version: '3'
+
+services:
+   db:
+     build: ./db
+     volumes:
+       - db_data2:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: olog
+       MYSQL_DATABASE: olog
+       MYSQL_USER: olog
+       MYSQL_PASSWORD: olog
+     ports:
+       - "3306:3306"
+
+   glassfish:
+     depends_on:
+       - db
+     build: ./glassfish
+     ports:
+       - "18080:8080"
+       - "8081:8081"
+       - "14848:4848"
+     restart: always
+     environment:
+       - DATABASE_HOST=db
+       - DATABASE_PORT=3306
+       - GLASSFISH_PASS="password"
+
+volumes:
+    db_data2:
