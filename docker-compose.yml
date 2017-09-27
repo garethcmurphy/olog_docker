@@ -30,7 +30,7 @@ services:
        - GLASSFISH_PASS="password"
 
    openldap:
-     image: osixia/openldap:1.1.9
+     build: ./ldap
      container_name: openldap
      environment:
        LDAP_LOG_LEVEL: "256"
