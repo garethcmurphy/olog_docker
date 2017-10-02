@@ -35,8 +35,8 @@ services:
      environment:
        LDAP_LOG_LEVEL: "256"
        LDAP_ORGANISATION: "Example Inc."
-       LDAP_DOMAIN: "example.org"
-       LDAP_BASE_DN: ""
+       LDAP_DOMAIN: "ldap"
+       LDAP_BASE_DN: "dc=cf-test,dc=local"
        LDAP_ADMIN_PASSWORD: "admin"
        LDAP_CONFIG_PASSWORD: "config"
        LDAP_READONLY_USER: "false"
@@ -65,6 +65,13 @@ services:
        - "636:636"
      domainname: "example.org" # important: same as hostname
      hostname: "example.org"
+
+   client:
+     build: ./client/
+     ports:
+       - "8000:8000"
+            
+
 
 volumes:
     db_data2:

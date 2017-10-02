@@ -31,5 +31,5 @@ EXPOSE 4848 8080 8181
 
 RUN /run.sh
 COPY domain.xml ${GLASSFISH_HOME}/domains/domain1/config/
-COPY olog-service-2.2.6.war ${GLASSFISH_HOME}/domains/domain1/autodeploy/app.war
+COPY olog-service-2.2.6.war ${GLASSFISH_HOME}/domains/domain1/autodeploy/
 CMD ["/run_server_again.sh"]

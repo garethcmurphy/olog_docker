@@ -7,7 +7,17 @@
       </module>
     </application>
   </system-applications>
-  <applications></applications>
+  <applications>
+    <application context-root="/Olog" location="${com.sun.aas.instanceRootURI}/applications/app/" name="app" object-type="user">
+      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/app/app.war"></property>
+      <property name="defaultAppName" value="app"></property>
+      <module name="app">
+        <engine sniffer="jpa"></engine>
+        <engine sniffer="security"></engine>
+        <engine sniffer="web"></engine>
+      </module>
+    </application>
+  </applications>
   <resources>
     <jdbc-resource pool-name="__TimerPool" jndi-name="jdbc/__TimerPool" object-type="system-admin"></jdbc-resource>
     <jdbc-resource pool-name="DerbyPool" jndi-name="jdbc/__default"></jdbc-resource>
@@ -210,13 +220,19 @@
       <property name="ProfileSql" value="false"></property>
     </jdbc-connection-pool>
     <jdbc-resource pool-name="OlogPool" description="" jndi-name="jdbc/olog"></jdbc-resource>
+    <custom-resource res-type="javax.naming.directory.Directory" description="" jndi-name="ologGroups" factory-class="com.sun.jndi.ldap.LdapCtxFactory">
+      <property name="javax.naming.security.principal" value="cn=olog,dc=local"></property>
+      <property name="URL" value="ldap://ldap/dc=cf-test,dc=local"></property>
+    </custom-resource>
   </resources>
   <servers>
     <server name="server" config-ref="server-config">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
+      <application-ref ref="app" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/olog"></resource-ref>
+      <resource-ref ref="ologGroups"></resource-ref>
     </server>
   </servers>
   <nodes>
@@ -273,6 +289,12 @@
           <property name="jaas-context" value="fileRealm"></property>
         </auth-realm>
         <auth-realm classname="com.sun.enterprise.security.auth.realm.certificate.CertificateRealm" name="certificate"></auth-realm>
+        <auth-realm name="olog" classname="com.sun.enterprise.security.auth.realm.ldap.LDAPRealm">
+          <property name="directory" value="ldap://ldap:389"></property>
+          <property name="base-dn" value="dc=cf-test,dc=local"></property>
+          <property name="group-search-filter" value="memberUid=%"></property>
+          <property name="jaas-context" value="ldapRealm"></property>
+        </auth-realm>
         <jacc-provider policy-provider="com.sun.enterprise.security.provider.PolicyWrapper" name="default" policy-configuration-factory-provider="com.sun.enterprise.security.provider.PolicyConfigurationFactoryImpl">
           <property name="repository" value="${com.sun.aas.instanceRoot}/generated/policy"></property>
         </jacc-provider>
@@ -463,6 +485,12 @@
           <property name="jaas-context" value="fileRealm"></property>
         </auth-realm>
         <auth-realm classname="com.sun.enterprise.security.auth.realm.certificate.CertificateRealm" name="certificate"></auth-realm>
+        <auth-realm name="olog" classname="com.sun.enterprise.security.auth.realm.ldap.LDAPRealm">
+          <property name="directory" value="ldap://ldap:389"></property>
+          <property name="base-dn" value="dc=cf-test,dc=local"></property>
+          <property name="group-search-filter" value="memberUid=%s"></property>
+          <property name="jaas-context" value="ldapRealm"></property>
+        </auth-realm>
         <jacc-provider policy-provider="com.sun.enterprise.security.provider.PolicyWrapper" name="default" policy-configuration-factory-provider="com.sun.enterprise.security.provider.PolicyConfigurationFactoryImpl">
           <property name="repository" value="${com.sun.aas.instanceRoot}/generated/policy"></property>
         </jacc-provider>
