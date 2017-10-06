@@ -29,13 +29,13 @@ services:
        - DATABASE_PORT=3306
        - GLASSFISH_PASS="password"
 
-   openldap:
+   ldap:
      build: ./ldap
-     container_name: openldap
+     container_name: ldap
      environment:
        LDAP_LOG_LEVEL: "256"
        LDAP_ORGANISATION: "Example Inc."
-       LDAP_DOMAIN: "ldap"
+       LDAP_DOMAIN: "local"
        LDAP_BASE_DN: "dc=cf-test,dc=local"
        LDAP_ADMIN_PASSWORD: "admin"
        LDAP_CONFIG_PASSWORD: "config"
@@ -70,6 +70,7 @@ services:
      build: ./client/
      ports:
        - "8000:8000"
+       - "3000:3000"
             
 
 
