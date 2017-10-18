@@ -13,7 +13,7 @@
 var version = "0.5";
 
 // For accessing the REST service
-var serviceurl = "http:" + "//" + "localhost:18080" + "/Olog/resources/";
+var serviceurl = "http:" + "//" + "glassfish:8080" + "/Olog/resources/";
 
 // For all the dates shown in client
 // Format docs can be found at http://momentjs.com/docs/#/displaying/format/

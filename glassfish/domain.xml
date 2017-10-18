@@ -221,8 +221,8 @@
     </jdbc-connection-pool>
     <jdbc-resource pool-name="OlogPool" description="" jndi-name="jdbc/olog"></jdbc-resource>
     <custom-resource res-type="javax.naming.directory.Directory" description="" jndi-name="ologGroups" factory-class="com.sun.jndi.ldap.LdapCtxFactory">
-      <property name="javax.naming.security.principal" value="cn=olog,dc=local"></property>
-      <property name="URL" value="ldap://ldap/dc=cf-test,dc=local"></property>
+      <property name="javax.naming.security.principal" value="cn=olog,dc=ldap"></property>
+      <property name="URL" value="ldap://ldap/dc=cf-test,dc=ldap"></property>
     </custom-resource>
   </resources>
   <servers>
@@ -291,7 +291,7 @@
         <auth-realm classname="com.sun.enterprise.security.auth.realm.certificate.CertificateRealm" name="certificate"></auth-realm>
         <auth-realm name="olog" classname="com.sun.enterprise.security.auth.realm.ldap.LDAPRealm">
           <property name="directory" value="ldap://ldap:389"></property>
-          <property name="base-dn" value="dc=cf-test,dc=local"></property>
+          <property name="base-dn" value="dc=cf-test,dc=ldap"></property>
           <property name="group-search-filter" value="memberUid=%"></property>
           <property name="jaas-context" value="ldapRealm"></property>
         </auth-realm>
@@ -487,7 +487,7 @@
         <auth-realm classname="com.sun.enterprise.security.auth.realm.certificate.CertificateRealm" name="certificate"></auth-realm>
         <auth-realm name="olog" classname="com.sun.enterprise.security.auth.realm.ldap.LDAPRealm">
           <property name="directory" value="ldap://ldap:389"></property>
-          <property name="base-dn" value="dc=cf-test,dc=local"></property>
+          <property name="base-dn" value="dc=cf-test,dc=ldap"></property>
           <property name="group-search-filter" value="memberUid=%s"></property>
           <property name="jaas-context" value="ldapRealm"></property>
         </auth-realm>

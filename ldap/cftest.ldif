@@ -1,26 +1,26 @@
-dn: dc=cf-test,dc=local
+dn: dc=cf-test,dc=ldap
 objectClass: dcObject
 objectClass: organization
 dc: cf-test
 o: ChannelFinder Test
 
-dn: cn=channelfinder,dc=cf-test,dc=local
+dn: cn=channelfinder,dc=cf-test,dc=ldap
 objectClass: simpleSecurityObject
 objectClass: organizationalRole
 userPassword:: e1NIQX1jUkR0cE5DZUJpcWw1S09Rc0tWeXJBMHNBaUE9
 cn: channelfinder
 
-dn: ou=Group,dc=cf-test,dc=local
+dn: ou=Group,dc=cf-test,dc=ldap
 objectClass: organizationalunit
 ou: Group
 description: groups branch
 
-dn: ou=People,dc=cf-test,dc=local
+dn: ou=People,dc=cf-test,dc=ldap
 objectClass: organizationalunit
 ou: People
 description: people branch
 
-dn: uid=tag,ou=People,dc=cf-test,dc=local
+dn: uid=tag,ou=People,dc=cf-test,dc=ldap
 uid: tag
 objectClass: account
 objectClass: posixAccount
@@ -31,7 +31,7 @@ uidNumber: 23001
 gidNumber: 23001
 homeDirectory: /dev/null
 
-dn: uid=property,ou=People,dc=cf-test,dc=local
+dn: uid=property,ou=People,dc=cf-test,dc=ldap
 uid: property
 objectClass: account
 objectClass: posixAccount
@@ -42,7 +42,7 @@ uidNumber: 23002
 gidNumber: 23002
 homeDirectory: /dev/null
 
-dn: uid=channel,ou=People,dc=cf-test,dc=local
+dn: uid=channel,ou=People,dc=cf-test,dc=ldap
 uid: channel
 objectClass: account
 objectClass: posixAccount
@@ -53,7 +53,7 @@ uidNumber: 23003
 gidNumber: 23003
 homeDirectory: /dev/null
 
-dn: uid=admin,ou=People,dc=cf-test,dc=local
+dn: uid=admin,ou=People,dc=cf-test,dc=ldap
 uid: admin
 objectClass: account
 objectClass: posixAccount
@@ -64,7 +64,7 @@ uidNumber: 23004
 gidNumber: 23004
 homeDirectory: /dev/null
 
-dn: uid=property2,ou=People,dc=cf-test,dc=local
+dn: uid=property2,ou=People,dc=cf-test,dc=ldap
 uid: property2
 objectClass: account
 objectClass: posixAccount
@@ -75,7 +75,7 @@ uidNumber: 23005
 gidNumber: 23005
 homeDirectory: /dev/null
 
-dn: uid=channel2,ou=People,dc=cf-test,dc=local
+dn: uid=channel2,ou=People,dc=cf-test,dc=ldap
 uid: channel2
 objectClass: account
 objectClass: posixAccount
@@ -86,7 +86,7 @@ uidNumber: 23006
 gidNumber: 23006
 homeDirectory: /dev/null
 
-dn: cn=cf-ttags,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-ttags,ou=Group,dc=cf-test,dc=ldap
 cn: cf-ttags
 objectClass: posixGroup
 description: cf-ttags group
@@ -96,7 +96,7 @@ memberUid: property
 memberUid: property2
 memberUid: channel
 
-dn: cn=cf-tproperties,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-tproperties,ou=Group,dc=cf-test,dc=ldap
 cn: cf-tproperties
 objectClass: posixGroup
 description: cf-tproperties group
@@ -105,7 +105,7 @@ memberUid: property
 memberUid: channel
 memberUid: channel2
 
-dn: cn=cf-tchannels,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-tchannels,ou=Group,dc=cf-test,dc=ldap
 cn: cf-tchannels
 objectClass: posixGroup
 description: cf-tchannels group
@@ -113,7 +113,7 @@ gidNumber: 24003
 memberUid: channel
 memberUid: channel2
 
-dn: cn=cf-xxxx,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-xxxx,ou=Group,dc=cf-test,dc=ldap
 cn: cf-xxxx
 objectClass: posixGroup
 description: cf-xxxx group
@@ -122,7 +122,7 @@ memberUid: tag
 memberUid: property
 memberUid: channel
 
-dn: cn=cf-testx,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-testx,ou=Group,dc=cf-test,dc=ldap
 cn: cf-testx
 objectClass: posixGroup
 description: cf-testx group
@@ -131,14 +131,14 @@ memberUid: tag
 memberUid: property
 memberUid: channel
 
-dn: cn=cf-tags,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-tags,ou=Group,dc=cf-test,dc=ldap
 cn: cf-tags
 objectClass: posixGroup
 description: cf-tags group
 gidNumber: 24006
 memberUid: tag
 
-dn: cn=cf-properties,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-properties,ou=Group,dc=cf-test,dc=ldap
 cn: cf-properties
 objectClass: posixGroup
 description: cf-properties group
@@ -146,7 +146,7 @@ gidNumber: 24007
 memberUid: property
 memberUid: property2
 
-dn: cn=cf-channels,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-channels,ou=Group,dc=cf-test,dc=ldap
 cn: cf-channels
 objectClass: posixGroup
 description: cf-channels group
@@ -154,7 +154,7 @@ gidNumber: 24008
 memberUid: channel
 memberUid: channel2
 
-dn: cn=cf-admins,ou=Group,dc=cf-test,dc=local
+dn: cn=cf-admins,ou=Group,dc=cf-test,dc=ldap
 cn: cf-admins
 objectClass: posixGroup
 description: cf-admins group
