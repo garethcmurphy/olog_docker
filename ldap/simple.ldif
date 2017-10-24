@@ -1,21 +1,21 @@
-dn: dc=nscl,dc=msu,dc=edu
+dn: dc=cf-test,dc=ldap
 objectclass: dcObject
 objectClass: organization
 objectClass: top
-dc: nscl
+dc: cf-test
 o: NSCL Olog Test
 
-dn: ou=Group,dc=nscl,dc=msu,dc=edu
+dn: ou=Group,dc=cf-test,dc=ldap
 objectclass: organizationalUnit
 ou: Group
 description: groups branch
 
-dn: ou=People,dc=nscl,dc=msu,dc=edu
+dn: ou=People,dc=cf-test,dc=ldap
 objectclass: organizationalUnit
 ou: People
 description: people branch
 
-dn: uid=taggy,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=taggy,ou=People,dc=cf-test,dc=ldap
 uid: taggy
 objectClass: account
 objectClass: posixAccount
@@ -26,7 +26,7 @@ uidNumber: 23001
 gidNumber: 23001
 homeDirectory: /dev/null
 
-dn: uid=logbooky,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=logbooky,ou=People,dc=cf-test,dc=ldap
 uid: logbooky
 objectClass: account
 objectClass: posixAccount
@@ -37,7 +37,7 @@ uidNumber: 23002
 gidNumber: 23002
 homeDirectory: /dev/null
 
-dn: uid=loggy,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=loggy,ou=People,dc=cf-test,dc=ldap
 uid: loggy
 objectClass: account
 objectClass: posixAccount
@@ -48,7 +48,7 @@ uidNumber: 23003
 gidNumber: 23003
 homeDirectory: /dev/null
 
-dn: uid=boss,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=boss,ou=People,dc=cf-test,dc=ldap
 uid: boss
 objectClass: account
 objectClass: posixAccount
@@ -59,7 +59,7 @@ uidNumber: 23004
 gidNumber: 23004
 homeDirectory: /dev/null
 
-dn: uid=logbooky2,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=logbooky2,ou=People,dc=cf-test,dc=ldap
 uid: logbooky2
 objectClass: account
 objectClass: posixAccount
@@ -70,7 +70,7 @@ uidNumber: 23005
 gidNumber: 23005
 homeDirectory: /dev/null
 
-dn: uid=loggy2,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=loggy2,ou=People,dc=cf-test,dc=ldap
 uid: loggy2
 objectClass: account
 objectClass: posixAccount
@@ -81,7 +81,7 @@ uidNumber: 23006
 gidNumber: 23006
 homeDirectory: /dev/null
 
-dn: uid=loggy3,ou=People,dc=nscl,dc=msu,dc=edu
+dn: uid=loggy3,ou=People,dc=cf-test,dc=ldap
 uid: loggy3
 objectClass: account
 objectClass: posixAccount
@@ -92,7 +92,7 @@ uidNumber: 23007
 gidNumber: 23007
 homeDirectory: /dev/null
 
-dn: cn=testt,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=testt,ou=Group,dc=cf-test,dc=ldap
 cn: testt
 objectClass: posixGroup
 description: testt group
@@ -103,7 +103,7 @@ memberUid: logbooky2
 memberUid: loggy
 memberUid: loggy3
 
-dn: cn=testp,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=testp,ou=Group,dc=cf-test,dc=ldap
 cn: testp
 objectClass: posixGroup
 description: testp group
@@ -113,7 +113,7 @@ memberUid: loggy
 memberUid: loggy2
 memberUid: loggy3
 
-dn: cn=testc,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=testc,ou=Group,dc=cf-test,dc=ldap
 cn: testc
 objectClass: posixGroup
 description: testc group
@@ -122,7 +122,7 @@ memberUid: loggy
 memberUid: loggy2
 memberUid: loggy3
 
-dn: cn=xxxx,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=xxxx,ou=Group,dc=cf-test,dc=ldap
 cn: xxxx
 objectClass: posixGroup
 description: xxxx group
@@ -131,7 +131,7 @@ memberUid: taggy
 memberUid: logbooky
 memberUid: loggy
 
-dn: cn=testx,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=testx,ou=Group,dc=cf-test,dc=ldap
 cn: testx
 objectClass: posixGroup
 description: testxx group
@@ -140,14 +140,14 @@ memberUid: taggy
 memberUid: logbooky
 memberUid: loggy
 
-dn: cn=olog-tags,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=olog-tags,ou=Group,dc=cf-test,dc=ldap
 cn: olog-tags
 objectClass: posixGroup
 description: olog-tags group
 gidNumber: 24004
 memberUid: taggy
 
-dn: cn=olog-logbooks,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=olog-logbooks,ou=Group,dc=cf-test,dc=ldap
 cn: olog-logbooks
 objectClass: posixGroup
 description: olog-logbooks group
@@ -155,7 +155,7 @@ gidNumber: 24005
 memberUid: logbooky
 memberUid: logbooky2
 
-dn: cn=olog-logs,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=olog-logs,ou=Group,dc=cf-test,dc=ldap
 cn: olog-logs
 objectClass: posixGroup
 description: olog-logs group
@@ -164,7 +164,7 @@ memberUid: loggy
 memberUid: loggy2
 memberUid: loggy3
 
-dn: cn=olog-admins,ou=Group,dc=nscl,dc=msu,dc=edu
+dn: cn=olog-admins,ou=Group,dc=cf-test,dc=ldap
 cn: olog-admins
 objectClass: posixGroup
 description: olog-admins group
